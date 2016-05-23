@@ -24,3 +24,16 @@ ExportedObj/
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
+.vscode/launch.json
+.vscode/settings.json
+VSCode.meta
+Assets/VSCode/HOWTO.pdf
+Assets/VSCode/HOWTO.pdf.meta
+Assets/VSCode/LICENSE
+Assets/VSCode/LICENSE.meta
+Assets/VSCode/Plugins.meta
+Assets/VSCode/README.md
+Assets/VSCode/README.md.meta
+Assets/VSCode/Plugins/Editor.meta
+Assets/VSCode/Plugins/Editor/VSCode.cs
+Assets/VSCode/Plugins/Editor/VSCode.cs.meta
