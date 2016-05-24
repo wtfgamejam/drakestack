@@ -4,7 +4,7 @@ using System.Collections;
 
 public class CameraMovement : MonoBehaviour {
 
-	public float duration = 50f;
+	public float duration = 0.5f;
 	public GameObject resetButton;
 	private Vector3 startPos;
 	private Vector3 endPos;
@@ -26,8 +26,7 @@ public class CameraMovement : MonoBehaviour {
 			
 			if(currentLerpTime >= duration)
 			{
-				Debug.Log("END");
-				EndGame();
+				lerp = false;
 			}
 		
 			float perc = currentLerpTime / duration;
@@ -36,15 +35,24 @@ public class CameraMovement : MonoBehaviour {
 		
 	}
 	
-	public void Play()
+	public void Move(Vector3 dest)
 	{
+		if(dest.y < transform.localPosition.y) return;
 		currentLerpTime = 0f;
-		transform.localPosition = startPos;
+		startPos = transform.localPosition;
+		endPos = new Vector3(transform.localPosition.x, dest.y, transform.localPosition.z);
 		lerp = true;
 	}
 	
-	public void EndGame()
+	public void Play()
 	{
+		currentLerpTime = 0f;
+		// transform.localPosition = startPos;
+		// lerp = true;
+	}
+	
+	public void EndGame()
+ 	{
 		lerp = false;
 		resetButton.SetActive(true);
 	}
