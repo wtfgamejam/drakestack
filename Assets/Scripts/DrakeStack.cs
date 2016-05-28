@@ -34,6 +34,10 @@ public class DrakeStack : MonoBehaviour {
 	
 	void EndGame()
 	{
+		foreach(GameObject d in drakes)
+		{
+			Destroy(d);
+		}
 		camera.EndGame();
 	}
 }

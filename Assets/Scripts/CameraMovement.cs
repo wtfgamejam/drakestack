@@ -6,6 +6,7 @@ public class CameraMovement : MonoBehaviour {
 
 	public float duration = 0.5f;
 	public GameObject resetButton;
+	private Vector3 bottomPos;
 	private Vector3 startPos;
 	private Vector3 endPos;
 	private float currentLerpTime = 0f;
@@ -14,6 +15,7 @@ public class CameraMovement : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		startPos = transform.localPosition;
+		bottomPos = new Vector3(0f,0f,-10f);
 		endPos = new Vector3(startPos.x, 160f, startPos.z);
 		resetButton.SetActive(false);
 	}
@@ -46,13 +48,16 @@ public class CameraMovement : MonoBehaviour {
 	
 	public void Play()
 	{
+		Debug.Log("Play");
+		resetButton.SetActive(false);
 		currentLerpTime = 0f;
-		// transform.localPosition = startPos;
+		transform.localPosition = bottomPos;
 		// lerp = true;
 	}
 	
 	public void EndGame()
  	{
+		Debug.Log("End");
 		lerp = false;
 		resetButton.SetActive(true);
 	}

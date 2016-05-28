@@ -11,7 +11,7 @@ public class Drake : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(transform.localPosition.x > 10f || transform.localPosition.x < -10f)
+		if(transform.localPosition.x > 5f || transform.localPosition.x < -5f)
 		{
 			Fall();
 			Debug.Log("fall");
